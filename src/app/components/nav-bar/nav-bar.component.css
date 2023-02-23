@@ -1,0 +1,28 @@
+.navbar{
+    margin-top: 40px;
+}
+
+.navbar-nav {
+    margin: auto;
+    background-color: rgba(52, 52, 52, 0.9);
+    border-radius: 30px;
+}
+
+.nav-item{
+    font-size: 28px;
+    margin: auto;
+
+}
+
+nav .navbar-nav li a{    
+    color: white;
+}
+
+nav .navbar-nav li a:hover{    
+    color: grey;
+    transition: 0.5s;
+}
+
+.contact-button{
+    color: white;
+}

@@ -1,0 +1,18 @@
+.container-fluid{
+    padding: 10px ;
+    background-color: rgb(229, 230, 228);
+}
+
+.card {
+    border-radius: 30px;
+}
+
+.card-title, .card-text{
+    color:black;
+}
+
+.card-img-top{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}

@@ -1,0 +1,101 @@
+{
+    "aboutMe": {
+        "title": "About me...",
+        "description": "As a student, I have always looked for building my own criteria to be able to solve problems fast and efficiently, appealing to teamwork and taking the necessary risks and responsibilities. Now, with the knowledge I have acquired, I am looking forward to contribute to the industry and enrich my professional development by doing so."
+    },
+    "experiences": [
+        {
+            "title": "steelChallenge competition with steelUniversity",
+            "date": "July 2022 / November 2022",
+            "description": "Participation in steelChallenge-17, a competition in which steel refining was simulated according to chemical, temperature and environmental requirements.",
+            "img": "assets/images/steelChallenge.PNG"
+        },
+        {
+            "title": "Internship on the ITBA Energy Laboratory",
+            "date": "March 2022 / Present",
+            "description": "Preparation of injection pump for the project of high pressure electrolyzer project.",
+            "img": "assets/images/bomba.jpg"
+        },
+        {
+            "title": "Flow-metric of manifold of a diesel engine",
+            "date": "March 2022 / July 2022",
+            "description": "Member of the team in charge of the flow-metric of exhaust and intake manifold for future modeling and comparison with CFD models.",
+            "img": "assets/images/manifold.jpg"
+        },
+        {
+            "title": "Project leader of IAM3d ASME ITBA",
+            "date": "December 2020 / March 2021",
+            "description": "Design of a racing drone with cargo transport manufactured by additive manufacturing for the international ASME competition.",
+            "img": "assets/images/drone.png"
+        }
+    ],
+
+    "otherExperiences": [
+        {
+            "title": "Programming course “Yo programo” Ministerio Productivo de Desarrollo de La Nación y CESSI",
+            "date": "July 2022 / Present"
+        },
+        {
+            "title": "Programming course “Sé programar” Ministerio Productivo de Desarrollo de La Nación y CESSI",
+            "date": "June 2022 / August 2022"
+        },
+        {
+            "title": "Member of the board of directors of the student section ASME ITBA",
+            "date": "August 2021/ August 2022"
+        },
+        {
+            "title": "Principal of the student section ASME ITBA",
+            "date": "August 2020/ August 2021"
+        },
+        {
+            "title": "Private pilot and glider pilot Club Argentino de Planeadores Albatros",
+            "date": "August 2017 / Present"
+        },
+        {
+            "title": "Cultural exchange - Kansas, Estados Unidos",
+            "date": "January 2018 / February 2018"
+        }
+    ],
+
+    "computerTools":[
+        {
+            "programName":"CATIA",
+            "level":"Advanced"
+        },
+        {
+            "programName":"Fusion360",
+            "level":"Advanced"
+        },
+        {
+            "programName":"Matlab",
+            "level":"Advanced"
+        },
+        {
+            "programName":"Microsoft Excel",
+            "level":"Advanced"
+        }
+    ],
+    "languages":[
+        {
+            "language":"English",
+            "level":"Advanced (B2), Speaking and writing"
+        },
+        {
+            "language":"Italian",
+            "level":"Basic, Speaking and writing"
+        }
+        
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
