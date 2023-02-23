@@ -4,6 +4,18 @@
 }
 
 .contact-button {
-    background-color: rgb(229, 230, 228);
+    background-color: rgba(229, 230, 228, 0);
+    color: white !important;
+    border: solid;
+    border-width: 0.5px;
+    border-color: white;
+    margin: 5px;
+    transition: 0.15s;
+}
+
+.contact-button:hover{
+    background-color: white;
+    color: black !important
+    
 }
 

@@ -1,0 +1,10 @@
+.container-fluid{
+    padding:0px 20px;
+    background-color: rgb(229, 230, 228);
+}
+
+.login-button {
+    background-color: rgb(229, 230, 228);
+    margin: 5px;
+}
+
