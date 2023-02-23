@@ -1,1 +1,8 @@
-<p>education works!</p>
+<div id="education" class="container-fluid">
+    <div class="card">
+        <div *ngFor="let education of educationList">
+                <p class="card-title"><strong>{{education.institution}}</strong></p>
+                <p class="card-text">{{education.career}} - {{education.date}} </p>
+        </div>
+    </div>
+</div>

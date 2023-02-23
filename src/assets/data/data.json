@@ -85,6 +85,20 @@
             "level":"Basic, Speaking and writing"
         }
         
+    ],
+
+    "education":[
+        {
+            "institution":"Instituto Tecnológico de Buenos Aires",
+            "date":"March 2019 / Present",
+            "career": "Ingeniería Mecánica"
+        },
+        {
+            "institution":"Instituto Nuestra Señora de las Nieves",
+            "date":"March 2014 / December 2018",
+            "career": "Secundario bachiller bilingue"
+        }
+
     ]
 }
 
