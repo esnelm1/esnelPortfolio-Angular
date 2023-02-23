@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { CapabilitiesComponent } from './components/capabilities/capabilities.component';
+import { EducationComponent } from './components/education/education.component';
+import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { LoginComponent } from './components/login/login.component';
     NavBarComponent,
     FooterComponent,
     IntroComponent,
-    LoginComponent
+    LoginComponent,
+    CapabilitiesComponent,
+    EducationComponent,
+    MyProjectsComponent
   ],
   imports: [
     BrowserModule,
