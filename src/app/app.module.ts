@@ -19,6 +19,9 @@ import { LoginComponent } from './components/login/login.component';
 import { CapabilitiesComponent } from './components/capabilities/capabilities.component';
 import { EducationComponent } from './components/education/education.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { PercentageChartsComponent } from './components/capabilities/percentage-charts/percentage-charts.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,8 @@ import { MyProjectsComponent } from './components/my-projects/my-projects.compon
     LoginComponent,
     CapabilitiesComponent,
     EducationComponent,
-    MyProjectsComponent
+    MyProjectsComponent,
+    PercentageChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import { MyProjectsComponent } from './components/my-projects/my-projects.compon
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
