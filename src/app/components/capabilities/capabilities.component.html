@@ -1,7 +1,8 @@
 <div id="capabilities" class="container-fluid">
     <div class="card">
         <div *ngFor="let computerTools of capabilitiesList">
-            <app-percentage-charts [count]="80"></app-percentage-charts>
+            <p><app-percentage-charts count="{{computerTools.count}}" name="{{computerTools.programName}}"></app-percentage-charts></p>
         </div>
     </div>
 </div>
+

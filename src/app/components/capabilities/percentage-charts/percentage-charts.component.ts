@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ComponentRef, Input, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -8,7 +8,7 @@ import * as Highcharts from 'highcharts';
 })
 export class PercentageChartsComponent implements OnInit{
   @Input() name:string = '';
-  @Input() count:number = 0;
+  @Input() count:string = '';
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {
     series: [{
@@ -19,10 +19,47 @@ export class PercentageChartsComponent implements OnInit{
   ngOnInit(){
     console.log(this.count)
     this.chartOptions = {
+      title: {
+        text: this.name,
+        verticalAlign: 'middle',
+        style:{
+          fontWeight: 'bold',
+          fontFamily: 'Arial'
+        }
+      },
+      subtitle: {
+        text: this.count + '%',
+        verticalAlign: 'middle',
+        y: -10,
+        style: {
+          fontWeight: 'bold',
+          fontSize: 'large',
+          fontFamily: 'Arial'
+        }
+      },
       series: [{
-        data: [this.count,100-this.count],
-        type: 'pie'
-      }]
+        data: [Number(this.count),100-Number(this.count)],
+        innerSize: '85%',
+        type: 'pie',
+      }],
+      plotOptions: {
+        pie:{
+          dataLabels: {
+            enabled: false,
+            },
+            startAngle: 0,
+            endAngle: 360,
+            colors: ['#5e46e3','#c3b8f2']
+        }
+      },
+      chart: {
+        animation: {duration: 1000}
+      },
+      credits: {enabled: false},
+      tooltip: {
+        enabled: false
+      }
+
   }
   }
 }
