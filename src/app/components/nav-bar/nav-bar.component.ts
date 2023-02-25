@@ -9,7 +9,7 @@ import {ContactDialogComponent} from './../contact/contact.component'
 })
 export class NavBarComponent {
     constructor(public dialog: MatDialog) {}
-  
+    
     openDialog() {
       const dialogRef = this.dialog.open(ContactDialogComponent);
   

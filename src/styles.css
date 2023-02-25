@@ -2,3 +2,18 @@
 .nav-link{
     color:white
 }
+
+h3{
+    font-size: bold;
+}
+
+.container-fluid-body{
+    background-color: rgb(230, 230, 228);
+    padding-left: 15px;
+    padding-right: 15px ;
+}
+
+.container-fluid-card{
+    background-color: rgb(230, 230, 228);
+}
+

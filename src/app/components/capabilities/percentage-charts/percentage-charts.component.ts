@@ -49,7 +49,7 @@ export class PercentageChartsComponent implements OnInit{
             },
             startAngle: 0,
             endAngle: 360,
-            colors: ['#5e46e3','#c3b8f2']
+            colors: ['#0080ab','#bcc8cc']
         }
       },
       chart: {

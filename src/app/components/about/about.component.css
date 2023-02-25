@@ -1,9 +1,8 @@
-.container-fluid{
-    background-color: rgb(229, 230, 228);
-    padding-top: 15px;
-}
-
 .card{
     border-radius: 30px;
     padding: 20px;
+}
+
+.container-fluid-body{
+    padding-top: 10px;
 }

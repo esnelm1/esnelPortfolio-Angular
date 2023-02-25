@@ -6,15 +6,13 @@
     border-radius: 30px;
     padding: 20px;
 }
-
-.container-fluid{
-    background-color: rgb(229, 230, 228);
-    padding-top: 15px;
-}
-
-  
-  table {
+table {
     width:100%;
     Table-Layout:fixed;
 }
+
+.container-fluid-body{
+    padding-top: 15px;
+}
+
   
