@@ -1,8 +1,14 @@
 <div id="capabilities" class="container-fluid">
     <div class="card">
-        <div *ngFor="let computerTools of capabilitiesList">
-            <p><app-percentage-charts count="{{computerTools.count}}" name="{{computerTools.programName}}"></app-percentage-charts></p>
-        </div>
+        <table id="table-sparkline">
+            <tbody id="tbody-sparkline">
+                <tr>
+                    <th *ngFor="let computerTools of capabilitiesList">
+                        <app-percentage-charts count="{{computerTools.count}}"
+                        name="{{computerTools.programName}}"></app-percentage-charts>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
-
