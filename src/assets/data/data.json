@@ -81,12 +81,14 @@
     ],
     "languages":[
         {
-            "language":"English",
-            "level":"Advanced (B2), Speaking and writing"
+            "languageName":"English",
+            "level":"Advanced (B2), Speaking and writing",
+            "count": 80
         },
         {
-            "language":"Italian",
-            "level":"Basic, Speaking and writing"
+            "languageName":"Italian",
+            "level":"Basic, Speaking and writing",
+            "count": 20
         }
         
     ],

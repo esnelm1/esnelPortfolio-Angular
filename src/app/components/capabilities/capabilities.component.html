@@ -1,11 +1,23 @@
 <div id="capabilities" class="container-fluid">
     <div class="card">
+        <h3> Computer tools </h3>
         <table id="table-sparkline">
             <tbody id="tbody-sparkline">
                 <tr>
-                    <th *ngFor="let computerTools of capabilitiesList">
+                    <th *ngFor="let computerTools of computerToolsList">
                         <app-percentage-charts count="{{computerTools.count}}"
                         name="{{computerTools.programName}}"></app-percentage-charts>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+        <h3> Languages </h3>
+        <table id="table-sparkline">
+            <tbody id="tbody-sparkline">
+                <tr>
+                    <th *ngFor="let languages of languagesList">
+                        <app-percentage-charts count="{{languages.count}}"
+                        name="{{languages.languageName}}"></app-percentage-charts>
                     </th>
                 </tr>
             </tbody>

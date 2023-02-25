@@ -7,12 +7,14 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./capabilities.component.css']
 })
 export class CapabilitiesComponent {
-  capabilitiesList:any;
+  computerToolsList:any;
+  languagesList:any;
   constructor(private datosPortfolio:PortfolioService) {}
 
   ngOnInit(): void{
     this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.capabilitiesList = data.computerTools;
+      this.computerToolsList = data.computerTools;
+      this.languagesList = data.languages;
     });
   }
 }
