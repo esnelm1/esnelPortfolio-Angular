@@ -6,3 +6,15 @@
 .container-fluid-body{
     padding-top: 10px;
 }
+
+.profile-photo{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin: 10px;
+}
+.profile-text{
+    font-size: 20px;
+}

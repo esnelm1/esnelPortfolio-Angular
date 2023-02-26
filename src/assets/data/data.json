@@ -1,7 +1,8 @@
 {
     "aboutMe": {
         "title": "About me...",
-        "description": "As a student, I have always looked for building my own criteria to be able to solve problems fast and efficiently, appealing to teamwork and taking the necessary risks and responsibilities. Now, with the knowledge I have acquired, I am looking forward to contribute to the industry and enrich my professional development by doing so."
+        "description": "As a student, I have always looked for building my own criteria to be able to solve problems fast and efficiently, appealing to teamwork and taking the necessary risks and responsibilities. Now, with the knowledge I have acquired, I am looking forward to contribute to the industry and enrich my professional development by doing so.",
+        "img":"assets/images/esnel.jpg"
     },
     "experiences": [
         {
@@ -97,12 +98,15 @@
         {
             "institution":"Instituto Tecnológico de Buenos Aires",
             "date":"March 2019 / Present",
-            "career": "Ingeniería Mecánica"
+            "career": "Ingeniería Mecánica",
+            "img":"assets/images/itba-logo.jpg"
         },
         {
             "institution":"Instituto Nuestra Señora de las Nieves",
             "date":"March 2014 / December 2018",
-            "career": "Secundario bachiller bilingue"
+            "career": "Secundario bachiller bilingue",
+            "img":"assets/images/lasnieves-logo.jpg"
+
         }
 
     ]

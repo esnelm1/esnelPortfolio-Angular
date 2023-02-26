@@ -7,3 +7,13 @@
     padding: 20px;
 }
 
+.logo{
+    float: right;
+    height: auto;
+    width: 100px;
+}
+
+.container-fluid-body{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
