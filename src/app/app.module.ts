@@ -23,8 +23,8 @@ import { PercentageChartsComponent } from './components/capabilities/percentage-
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { LoginPruebaComponent } from './components/login-prueba/login-prueba.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CapabilitiesComponent,
     EducationComponent,
     MyProjectsComponent,
-    PercentageChartsComponent
+    PercentageChartsComponent,
+    LoginPruebaComponent
   ],
   imports: [
     BrowserModule,
