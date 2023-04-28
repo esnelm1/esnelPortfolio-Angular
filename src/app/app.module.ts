@@ -14,7 +14,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { CapabilitiesComponent } from './components/capabilities/capabilities.component';
 import { EducationComponent } from './components/education/education.component';
@@ -24,6 +23,8 @@ import { PercentageChartsComponent } from './components/capabilities/percentage-
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
