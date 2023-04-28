@@ -21,6 +21,9 @@ import { EducationComponent } from './components/education/education.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PercentageChartsComponent } from './components/capabilities/percentage-charts/percentage-charts.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { PercentageChartsComponent } from './components/capabilities/percentage-
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]
