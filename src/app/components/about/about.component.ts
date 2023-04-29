@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +8,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AboutComponent {
   aboutMe:any;
+  token:any;
   constructor(private datosPortfolio:PortfolioService) {}
 
   ngOnInit(): void{

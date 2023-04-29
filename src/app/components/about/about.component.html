@@ -3,5 +3,5 @@
       <h3>{{aboutMe.title}}</h3>
       <p class="profile-text"><img class="profile-photo" src="{{aboutMe.img}}">{{aboutMe.description}}</p>
     </div>
-    <button>Edit!</button>
+    <button *ngIf="token == 'true'" >Edit!</button>
   </div>
