@@ -46,8 +46,6 @@ export class LoginComponent {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
-        this.disabled = false;
-        console.log(this.disabled)
       })
       .catch(error => console.log(error));
   }
@@ -56,8 +54,6 @@ export class LoginComponent {
   onClick() {
     this.userService.logout()
     .then(()=>{
-      this.disabled = true;
-      console.log(this.disabled)
     })
       .catch(error => console.log(error));
   }

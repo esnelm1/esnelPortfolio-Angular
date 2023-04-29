@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
-import { LoginDialogComponent } from '../login/login.component';
-import {ViewChild} from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-about',
@@ -9,15 +8,8 @@ import {ViewChild} from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  @ViewChild(LoginDialogComponent) flag:any;
-  disabled:any;
   aboutMe:any;
   constructor(private datosPortfolio:PortfolioService) {}
-
-  ngAfterViewInit() {
-    this.disabled = this.flag.disabled;
-    console.log(this.disabled);
-  }
 
   ngOnInit(): void{
     this.datosPortfolio.obtenerDatos().subscribe(data => {
