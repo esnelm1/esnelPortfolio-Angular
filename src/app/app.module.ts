@@ -21,7 +21,6 @@ import { EducationComponent } from './components/education/education.component';
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PercentageChartsComponent } from './components/capabilities/percentage-charts/percentage-charts.component';
-
 @NgModule({
   declarations: [
     AppComponent,
