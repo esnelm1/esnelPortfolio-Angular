@@ -15,4 +15,7 @@ export class EducationComponent {
       this.educationList = data.education;
     });
   }
+  onFileChanged(){
+    
+  }
 }

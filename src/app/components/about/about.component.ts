@@ -14,5 +14,10 @@ export class AboutComponent {
   ngOnInit(): void{
     this.datosPortfolio.obtenerDatos().subscribe(data => {
       this.aboutMe = data.aboutMe;
-    });
-}}
+    });    
+}
+onFileChanged(){
+  
+}
+
+}

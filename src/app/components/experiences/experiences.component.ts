@@ -15,4 +15,7 @@ export class ExperiencesComponent {
       this.experiencesList = data.experiences;
     });
   }
+  onFileChanged(){
+    
+  }
 }

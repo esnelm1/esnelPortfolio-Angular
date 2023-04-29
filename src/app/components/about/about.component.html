@@ -3,5 +3,7 @@
       <h3>{{aboutMe.title}}</h3>
       <p class="profile-text"><img class="profile-photo" src="{{aboutMe.img}}">{{aboutMe.description}}</p>
     </div>
-    <button *ngIf="token == 'true'" >Edit!</button>
+    <button>Send</button>
+    <input>
+    <input type="file" (change)="onFileChanged()">
   </div>

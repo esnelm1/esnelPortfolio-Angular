@@ -6,6 +6,8 @@
           <div class="card-body d-flex flex-column">
             <p class="card-title"><strong>{{experiences.title}}</strong>— {{experiences.date}}</p>
             <p class="card-text">{{experiences.description}}</p>
+            <input>
+            <input type="file" (change)="onFileChanged()">
           </div>
         </div>
       </div>

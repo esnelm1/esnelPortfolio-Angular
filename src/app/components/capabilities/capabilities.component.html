@@ -7,6 +7,7 @@
                     <th *ngFor="let computerTools of computerToolsList">
                         <app-percentage-charts count="{{computerTools.count}}"
                         name="{{computerTools.programName}}"></app-percentage-charts>
+                        <input>
                     </th>
                 </tr>
             </tbody>
@@ -18,6 +19,7 @@
                     <th *ngFor="let languages of languagesList">
                         <app-percentage-charts count="{{languages.count}}"
                         name="{{languages.languageName}}"></app-percentage-charts>
+                        <input>
                     </th>
                 </tr>
             </tbody>
