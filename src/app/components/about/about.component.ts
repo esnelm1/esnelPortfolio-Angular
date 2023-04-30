@@ -3,6 +3,8 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { OnInit } from '@angular/core';
+import { per } from 'src/app/models/persona.model';
+import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
   selector: 'app-about',
@@ -10,9 +12,10 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  persona: per = new per("","","","");
   aboutMe: any;
   isLogged = false;
-  constructor(private datosPortfolio: PortfolioService, private userService: UserService) { }
+  constructor(public personaService: PersonaService, private userService: UserService) { }
 
   ngOnInit(): void {
     const auth = getAuth();
@@ -33,9 +36,7 @@ export class AboutComponent implements OnInit {
       }
     });
 
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      this.aboutMe = data.aboutMe;
-    });
+    this.personaService.getPersona().subscribe(data => {this.persona = data})
 
   }
   onFileChanged() {
