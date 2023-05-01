@@ -1,15 +1,30 @@
 <div id="experiences" class="container-fluid-card">
-    <div class="row">
-      <div *ngFor="let experiences of experiencesList" class="col-lg-3 mb-2 d-flex align-items-stretch" style="padding:15px;">
-        <div class="card">
-          <img class="card-img-top"[src]="experiences.img" alt="Card image">
-          <div class="card-body d-flex flex-column">
-            <p class="card-title"><strong>{{experiences.title}}</strong>— {{experiences.date}}</p>
-            <p class="card-text">{{experiences.description}}</p>
-            <input>
-            <input type="file" (change)="onFileChanged()">
-          </div>
+  <div class="row">
+    <div *ngFor="let experiences of experienceList" class="col-lg-3 mb-2 d-flex align-items-stretch"
+      style="padding:15px;">
+      <div class="card">
+        <img class="card-img-top" [src]="experiences.img" alt="Card image">
+        <div class="card-body d-flex flex-column">
+          <p class="card-title"><strong>{{experiences.nombreE}}</strong>— </p>
+          <p class="card-text">{{experiences.descripcionE}}</p>
         </div>
       </div>
     </div>
+    <div *ngIf="isLogged" class="card" style="padding: 20px;">
+      <h5> Modificar experiencia </h5>
+      <select #list (change)="onSelected(list.value)">
+        <option default>Elegir</option>
+        <option *ngFor="let experiences of experienceList" [value]="experiences.id">{{experiences.nombreE}}</option>
+      </select>
+      <input  [(ngModel)]="experience.nombreE" type="text">
+      <input  [(ngModel)]="experience.descripcionE" type="text">
+      <button (click)="saveData()" >Send</button>
+    </div>
+    <div *ngIf="isLogged" class="card" style="padding: 20px;">
+      <h5> Crear experiencia </h5>
+      <input  [(ngModel)]="newExperience.nombreE"  type="text">
+      <input  [(ngModel)]="newExperience.descripcionE" type="text">
+      <button (click)="createData()" >Crear</button>
+    </div>
+  </div>
 </div>

@@ -38,6 +38,7 @@ export class AboutComponent implements OnInit {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
+    window.location.reload();
   }
   onFileChanged() {
   }
