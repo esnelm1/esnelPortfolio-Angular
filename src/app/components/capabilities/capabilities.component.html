@@ -1,26 +1,31 @@
 <div id="capabilities" class="container-fluid-body">
     <div class="card">
-        <h3> Computer tools </h3>
+        <h3> Hard and soft skills </h3>
         <table id="table-sparkline">
             <tbody id="tbody-sparkline">
                 <tr>
-                    <th *ngFor="let computerTools of computerToolsList">
-                        <app-percentage-charts count="{{computerTools.count}}"
-                        name="{{computerTools.programName}}"></app-percentage-charts>                       
+                    <th *ngFor="let hys of hySList">
+                        <app-percentage-charts count="{{hys.porcentaje}}"
+                        name="{{hys.nombre}}"></app-percentage-charts>                       
                     </th>
                 </tr>
             </tbody>
         </table>
-        <h3> Languages </h3>
-        <table id="table-sparkline">
-            <tbody id="tbody-sparkline">
-                <tr>
-                    <th *ngFor="let languages of languagesList">
-                        <app-percentage-charts count="{{languages.count}}"
-                        name="{{languages.languageName}}"></app-percentage-charts>
-                    </th>
-                </tr>
-            </tbody>
-        </table>
+        <div *ngIf="isLogged" class="card" style="padding: 20px;">
+            <h5> Modificar experiencia </h5>
+            <select #list (change)="onSelected(list.value)">
+              <option default>Elegir</option>
+              <option *ngFor="let hys of hySList" [value]="hys.id">{{hys.nombre}}</option>
+            </select>
+            <input  [(ngModel)]="hyS.nombre" type="text">
+            <input  [(ngModel)]="hyS.porcentaje" type="text">
+            <button (click)="saveData()" >Send</button>
+          </div>
+          <div *ngIf="isLogged" class="card" style="padding: 20px;">
+            <h5> Crear experiencia </h5>
+            <input  [(ngModel)]="newHyS.nombre"  type="text">
+            <input  [(ngModel)]="newHyS.porcentaje" type="text">
+            <button (click)="createData()" >Crear</button>
+          </div>
     </div>
 </div>
