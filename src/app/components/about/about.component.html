@@ -6,7 +6,7 @@
     <div class="card"  *ngIf="isLogged">
       <h5> Modificar descripcion </h5>
     <input id="aboutMe" name="aboutMe" [(ngModel)]="persona.descripcion" type="text">
-    <input type="file" (change)="onFileChanged()">
+    <input type="file" (change)="uploadImage($event)">
     <button (click)="saveData()" *ngIf="isLogged">Send</button>
   </div>
   </div>

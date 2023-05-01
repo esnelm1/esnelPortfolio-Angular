@@ -26,6 +26,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { MatMenuModule} from '@angular/material/menu';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { MatMenuModule} from '@angular/material/menu';
     MatFormFieldModule,
     HighchartsChartModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]
