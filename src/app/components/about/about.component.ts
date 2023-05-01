@@ -13,7 +13,6 @@ import { PersonaService } from 'src/app/services/persona.service';
 })
 export class AboutComponent implements OnInit {
   persona: per = new per("","","","");
-  aboutMe: any;
   isLogged = false;
   constructor(public personaService: PersonaService, private userService: UserService) { }
 
@@ -26,21 +25,21 @@ export class AboutComponent implements OnInit {
         this.isLogged = true;
         console.log(this.isLogged);
         console.log(user.email);
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        // ...
       } else {
-        // User is signed out
-        // ...
       }
     });
 
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
+    this.personaService.getPersona(1).subscribe(data => {this.persona = data})
+    
+  }
 
+  saveData() {
+    this.personaService.setPersonaAboutMe(1,this.persona).subscribe(
+      data => {console.log('Data updated successfully')},
+      error => console.log(error)
+    );
   }
   onFileChanged() {
-
   }
 
 

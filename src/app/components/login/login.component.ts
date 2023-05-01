@@ -12,9 +12,10 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+  isLogged = false;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private userService: UserService) { }
 
   openDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent);
@@ -23,7 +24,32 @@ export class LoginComponent {
       console.log(`Dialog result: ${result}`);
     });
   }
+
+  ngOnInit(): void {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.isLogged = true;
+        console.log(this.isLogged);
+        console.log(user.email);
+      } else {
+      }
+    });
+  }
+
+  onClick() {
+    this.userService.logout()
+      .then(() => {
+      })
+      .catch(error => console.log(error));
+      this.isLogged = false;
+      window.location.reload();
+  }
 }
+
+
 @Component({
   selector: 'app-login-dialog',
   templateUrl: './login-dialog.component.html',
@@ -50,19 +76,10 @@ export class LoginDialogComponent implements OnInit {
         this.isLogged = true;
         console.log(this.isLogged);
         console.log(user.email);
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        // ...
       } else {
-        // User is signed out
-        // ...
       }
     });
-
-
   }
-
 
   onSubmit() {
     this.userService.login(this.formLogin.value)
@@ -72,14 +89,6 @@ export class LoginDialogComponent implements OnInit {
       .catch(error => console.log(error));
   }
 
-
-  onClick() {
-    this.userService.logout()
-      .then(() => {
-      })
-      .catch(error => console.log(error));
-      this.isLogged = false;
-  }
 
 }
 

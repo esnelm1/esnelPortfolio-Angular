@@ -3,12 +3,12 @@ export class per {
     nombre: String;
     apellido: String;
     img: String;
-    aboutMe: String;
+    descripcion: String;
 
-    constructor(nombre:String, apellido:String, img:String, aboutMe: String){
+    constructor(nombre:String, apellido:String, img:String, descripcion: String){
         this.nombre = nombre;
         this.apellido = apellido;
         this.img = img;
-        this.aboutMe = aboutMe;
+        this.descripcion = descripcion;
     }
 }

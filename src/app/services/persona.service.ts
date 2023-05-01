@@ -10,7 +10,10 @@ import { per } from '../models/persona.model';
 export class PersonaService {
   URL = 'http://localhost:8080/personas/';
   constructor(private http: HttpClient) {}
-    public getPersona(): Observable<per>{
-      return this.http.get<per>(this.URL+'traer/perfil');
+    public getPersona(id:number): Observable<per>{
+      return this.http.get<per>(this.URL+`detail/${id}`);
     }
+    public setPersonaAboutMe(id:number, descripcion: per ): Observable<per>{
+      return this.http.put<per>(this.URL + `update/${id}`, descripcion);
+    } 
    }
