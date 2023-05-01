@@ -8,7 +8,7 @@ import { per } from '../models/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/personas/';
+  URL = 'https://esneportfolio-backend.onrender.com/personas/';
   constructor(private http: HttpClient) {}
     public getPersona(id:number): Observable<per>{
       return this.http.get<per>(this.URL+`detail/${id}`);
