@@ -34,11 +34,11 @@ export class AboutComponent implements OnInit {
   }
 
   saveData() {
-    this.personaService.setPersonaAboutMe(1,this.persona).subscribe(
+    console.log(this.persona)
+    this.personaService.setPersona(1,this.persona).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    window.location.reload();
   }
   onFileChanged() {
   }

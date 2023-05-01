@@ -19,6 +19,7 @@
       <input  [(ngModel)]="experience.nombreE" type="text">
       <input  [(ngModel)]="experience.descripcionE" type="text">
       <button (click)="saveData()" >Send</button>
+      <button (click)="onDelete()" >Eliminar</button>
     </div>
     <div *ngIf="isLogged" class="card" style="padding: 20px;">
       <h5> Crear experiencia </h5>

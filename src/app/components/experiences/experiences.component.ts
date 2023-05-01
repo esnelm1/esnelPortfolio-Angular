@@ -39,6 +39,8 @@ export class ExperiencesComponent {
 	onSelected(value:any): void {
 		this.selectedExperience = value;
     this.experienceService.getExperience(value).subscribe(data => {this.experience = data})
+    this.ngOnInit()
+
 	}
 
   saveData() {
@@ -53,8 +55,15 @@ export class ExperiencesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-  }
+    this.ngOnInit()
 
-  
+    }
+    onDelete() {
+      this.experienceService.deleteExperience(this.selectedExperience).subscribe(
+        data => {console.log('Data updated successfully')},
+        error => console.log(error)
+      );
+      this.ngOnInit()
+  }
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { HyS } from 'src/app/models/HyS.model';
+import { HyS } from 'src/app/models/hys.model';
 import { HysService } from 'src/app/services/hys.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
@@ -39,6 +39,8 @@ export class CapabilitiesComponent {
 	onSelected(value:any): void {
 		this.selectedHyS = value;
     this.hysService.getHyS(value).subscribe(data => {this.hyS = data})
+    this.ngOnInit()
+
 	}
 
   saveData() {
@@ -46,6 +48,8 @@ export class CapabilitiesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
+    this.ngOnInit()
+
   }
 
   createData() {
@@ -53,6 +57,17 @@ export class CapabilitiesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
+    this.ngOnInit()
+
+  }
+
+  onDelete(){
+    this.hysService.deleteHyS(this.selectedHyS).subscribe(
+      data => {console.log('Data updated successfully')},
+      error => console.log(error)
+    );
+    this.ngOnInit()
+
   }
 
 }

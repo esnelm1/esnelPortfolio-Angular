@@ -12,7 +12,7 @@
             </tbody>
         </table>
         <div *ngIf="isLogged" class="card" style="padding: 20px;">
-            <h5> Modificar experiencia </h5>
+            <h5> Modificar habilidad </h5>
             <select #list (change)="onSelected(list.value)">
               <option default>Elegir</option>
               <option *ngFor="let hys of hySList" [value]="hys.id">{{hys.nombre}}</option>
@@ -20,9 +20,10 @@
             <input  [(ngModel)]="hyS.nombre" type="text">
             <input  [(ngModel)]="hyS.porcentaje" type="text">
             <button (click)="saveData()" >Send</button>
+            <button (click)="onDelete()" >Eliminar</button>
           </div>
           <div *ngIf="isLogged" class="card" style="padding: 20px;">
-            <h5> Crear experiencia </h5>
+            <h5> Crear habilidad </h5>
             <input  [(ngModel)]="newHyS.nombre"  type="text">
             <input  [(ngModel)]="newHyS.porcentaje" type="text">
             <button (click)="createData()" >Crear</button>

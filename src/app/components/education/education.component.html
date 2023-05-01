@@ -1,11 +1,27 @@
 <div id="education" class="container-fluid-body">
     <div class="card">
-        <div *ngFor="let education of educationList">
-                <p class="card-title"><strong>{{education.institution}}</strong> 
-                    <img class="logo" src="{{education.img}}"></p>
-                <p class="card-text">{{education.career}} - {{education.date}} </p>
-                <input>
-                <input type="file" (change)="onFileChanged()">
+        <div *ngFor="let educaciones of educacionList">
+                <p class="card-title"><strong>{{educaciones.nombreE}}</strong> 
+                    <img class="logo" src="{{educaciones.img}}"></p>
+                <p class="card-text">{{educaciones.descripcionE}}</p>
         </div>
+        <div *ngIf="isLogged" class="card" style="padding: 20px;">
+            <h5> Modificar educacion</h5>
+            <select #list (change)="onSelected(list.value)">
+              <option default>Elegir</option>
+              <option *ngFor="let educaciones of educacionList" [value]="educaciones.id">{{educaciones.nombreE}}</option>
+            </select>
+            <input  [(ngModel)]="educacion.nombreE" type="text">
+            <input  [(ngModel)]="educacion.descripcionE" type="text">
+            <button (click)="saveData()" >Send</button>
+            <button (click)="onDelete()" >Eliminar</button>
+          </div>
+          <div *ngIf="isLogged" class="card" style="padding: 20px;">
+            <h5> Crear educacion</h5>
+            <input  [(ngModel)]="newEducacion.nombreE"  type="text">
+            <input  [(ngModel)]="newEducacion.descripcionE" type="text">
+            <button (click)="createData()" >Crear</button>
+          </div>
+        <input type="file" (change)="onFileChanged()">
     </div>
 </div>

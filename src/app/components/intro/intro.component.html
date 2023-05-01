@@ -1,5 +1,8 @@
 <div id="intro" class="container-fluid">
-    <div class="typewriter">
-        <h1>Hi! I'm {{persona.nombre}} {{persona.apellido}}.</h1>
-      </div>
+  <div class="typewriter">
+    <h1>Hi! I'm {{persona.nombre}} {{persona.apellido}}.</h1>
+  </div>
 </div>
+<input  [(ngModel)]="persona.nombre" type="text">
+<input  [(ngModel)]="persona.apellido" type="text">
+<button (click)="saveData()" *ngIf="isLogged">Send</button>

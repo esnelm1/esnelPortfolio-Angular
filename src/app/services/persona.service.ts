@@ -13,7 +13,7 @@ export class PersonaService {
     public getPersona(id:number): Observable<per>{
       return this.http.get<per>(this.URL+`detail/${id}`);
     }
-    public setPersonaAboutMe(id:number, descripcion: per ): Observable<per>{
-      return this.http.put<per>(this.URL + `update/${id}`, descripcion);
+    public setPersona(id:number, persona: per ): Observable<per>{
+      return this.http.put<per>(this.URL + `update/${id}`, persona);
     } 
    }

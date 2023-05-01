@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HyS } from '../models/HyS.model';
+import { HyS } from '../models/hys.model';
 
 @Injectable({
   providedIn: 'root'
