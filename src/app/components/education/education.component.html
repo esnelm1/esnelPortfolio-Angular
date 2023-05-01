@@ -13,6 +13,7 @@
             </select>
             <input  [(ngModel)]="educacion.nombreE" type="text">
             <input  [(ngModel)]="educacion.descripcionE" type="text">
+            <input type="file" (change)="onFileChanged()">
             <button (click)="saveData()" >Send</button>
             <button (click)="onDelete()" >Eliminar</button>
           </div>
@@ -21,7 +22,8 @@
             <input  [(ngModel)]="newEducacion.nombreE"  type="text">
             <input  [(ngModel)]="newEducacion.descripcionE" type="text">
             <button (click)="createData()" >Crear</button>
+            <input type="file" (change)="onFileChanged()">
           </div>
-        <input type="file" (change)="onFileChanged()">
+        
     </div>
 </div>
