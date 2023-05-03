@@ -24,8 +24,6 @@ export class AboutComponent implements OnInit {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(user.email);
       } else {
       }
     });

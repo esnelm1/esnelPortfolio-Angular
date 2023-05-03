@@ -1,4 +1,9 @@
 
+.card {
+  border-radius: 30px;
+  padding: 10px;
+}
+
 .container-fluid{
   background: rgb(0, 71, 119);
   padding: 20%;

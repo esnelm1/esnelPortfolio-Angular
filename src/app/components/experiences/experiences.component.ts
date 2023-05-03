@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { exp } from 'src/app/models/experience.model';
 import { ExperienceService } from 'src/app/services/experience.service';
+import { ImageService } from 'src/app/services/image.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -17,7 +18,7 @@ export class ExperiencesComponent {
   isLogged = false;
   selectedExperience: any;
   public selectedClassification = 'Read';
-  constructor(public experienceService: ExperienceService, private userService: UserService) { }
+  constructor(public experienceService: ExperienceService, private userService: UserService, public imageService: ImageService) { }
 
   ngOnInit(): void {
     const auth = getAuth();
@@ -26,8 +27,6 @@ export class ExperiencesComponent {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(user.email);
       } else {
       }
     });
@@ -43,6 +42,7 @@ export class ExperiencesComponent {
 	}
 
   saveData() {
+    this.experience.img = this.imageService.url;
     this.experienceService.setExperience(this.selectedExperience,this.experience).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
@@ -50,6 +50,7 @@ export class ExperiencesComponent {
   }
 
   createData() {
+    this.newExperience.img = this.imageService.url;
     this.experienceService.createExperience(this.newExperience).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
@@ -63,4 +64,9 @@ export class ExperiencesComponent {
       );
   }
 
+  uploadImage($event:any){
+    const id = this.experience.id;
+    const name = "experience_" + id;
+    this.imageService.uploadImage($event, name);
+  }
 }

@@ -17,7 +17,6 @@ export class PercentageChartsComponent implements OnInit{
     }]
   }
   ngOnInit(){
-    console.log(this.count)
     this.chartOptions = {
       title: {
         text: this.name,

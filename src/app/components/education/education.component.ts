@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { Educacion } from 'src/app/models/educacion.model';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { ImageService } from 'src/app/services/image.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -17,7 +18,7 @@ export class EducationComponent {
   isLogged = false;
   selectedEducacion: any;
   public selectedClassification = 'Read';
-  constructor(public educacionService: EducacionService, private userService: UserService) { }
+  constructor(public educacionService: EducacionService, private userService: UserService, public imageService: ImageService) { }
 
   ngOnInit(): void {
     const auth = getAuth();
@@ -26,8 +27,6 @@ export class EducationComponent {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(user.email);
       } else {
       }
     });
@@ -37,12 +36,14 @@ export class EducationComponent {
   }
 
 	onSelected(value:any): void {
-		this.selectedEducacion = value;
+    this.selectedEducacion = value;
     this.educacionService.getEducacion(value).subscribe(data => {this.educacion = data})
 	}
 
   saveData() {
-    this.educacionService.setEducacion(this.selectedEducacion,this.educacion).subscribe(
+    this.educacion.img = this.imageService.url;
+    console.log(this.educacion);
+    this.educacionService.setEducacion(this.selectedEducacion,this.selectedEducacion).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
@@ -50,6 +51,8 @@ export class EducationComponent {
   }
 
   createData() {
+    this.newEducacion.img = this.imageService.url;
+    console.log(this.newEducacion)
     this.educacionService.createEducacion(this.newEducacion).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
@@ -64,8 +67,10 @@ export class EducationComponent {
 
   }
 
-  onFileChanged(){
-
+  uploadImage($event:any){
+    const id = this.educacion.id;
+    const name = "educacion_" + id;
+    this.imageService.uploadImage($event, name);
   }
 
 }

@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(user.email);
       } else {
       }
     });
@@ -75,8 +73,6 @@ export class LoginDialogComponent implements OnInit {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
-        console.log(this.isLogged);
-        console.log(user.email);
       } else {
       }
     });
