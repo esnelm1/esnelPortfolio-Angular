@@ -46,7 +46,7 @@ export class EducationComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    this.ngOnInit()
+
   }
 
   createData() {
@@ -54,14 +54,14 @@ export class EducationComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    this.ngOnInit()
+
     }
     onDelete() {
       this.educacionService.deleteEducacion(this.selectedEducacion).subscribe(
         data => {console.log('Data updated successfully')},
         error => console.log(error)
       );
-      this.ngOnInit()
+
   }
 
   onFileChanged(){

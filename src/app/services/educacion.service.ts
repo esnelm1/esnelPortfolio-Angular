@@ -7,7 +7,7 @@ import { Educacion } from '../models/educacion.model';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://esneportfolio-backend.onrender.com/educacion/';
+  URL = 'https://esnelportfolio-backend.onrender.com/educacion/';
   constructor(private http: HttpClient) {}
     public getEducacion(id:number): Observable<Educacion>{
       return this.http.get<Educacion>(this.URL+`detail/${id}`);

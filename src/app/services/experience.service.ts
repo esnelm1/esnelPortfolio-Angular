@@ -7,7 +7,7 @@ import { exp } from '../models/experience.model';
   providedIn: 'root'
 })
 export class ExperienceService {
-  URL = 'https://esneportfolio-backend.onrender.com/experiencia/';
+  URL = 'https://esnelportfolio-backend.onrender.com/experiencia/';
   constructor(private http: HttpClient) {}
     public getExperience(id:number): Observable<exp>{
       return this.http.get<exp>(this.URL+`detail/${id}`);

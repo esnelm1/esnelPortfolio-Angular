@@ -7,7 +7,7 @@ import { HyS } from '../models/hys.model';
   providedIn: 'root'
 })
 export class HysService {
-  URL = 'https://esneportfolio-backend.onrender.com/skill/';
+  URL = 'https://esnelportfolio-backend.onrender.com/skill/';
   constructor(private http: HttpClient) {}
     public getHyS(id:number): Observable<HyS>{
       return this.http.get<HyS>(this.URL+`detail/${id}`);

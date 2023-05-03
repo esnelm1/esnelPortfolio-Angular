@@ -39,7 +39,7 @@ export class CapabilitiesComponent {
 	onSelected(value:any): void {
 		this.selectedHyS = value;
     this.hysService.getHyS(value).subscribe(data => {this.hyS = data})
-    this.ngOnInit()
+
 
 	}
 
@@ -48,7 +48,7 @@ export class CapabilitiesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    this.ngOnInit()
+
 
   }
 
@@ -57,7 +57,7 @@ export class CapabilitiesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    this.ngOnInit()
+
 
   }
 
@@ -66,7 +66,7 @@ export class CapabilitiesComponent {
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );
-    this.ngOnInit()
+
 
   }
 
