@@ -42,6 +42,8 @@ export class ExperiencesComponent {
 	}
 
   saveData() {
+    console.log(this.imageService.url);
+    
     this.experience.img = this.imageService.url;
     this.experienceService.setExperience(this.selectedExperience,this.experience).subscribe(
       data => {console.log('Data updated successfully')},

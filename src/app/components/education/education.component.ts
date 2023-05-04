@@ -42,8 +42,7 @@ export class EducationComponent {
 
   saveData() {
     this.educacion.img = this.imageService.url;
-    console.log(this.educacion);
-    this.educacionService.setEducacion(this.selectedEducacion,this.selectedEducacion).subscribe(
+    this.educacionService.setEducacion(this.selectedEducacion,this.educacion).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
     );

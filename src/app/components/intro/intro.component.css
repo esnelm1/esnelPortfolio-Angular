@@ -7,6 +7,7 @@
 .container-fluid{
   background: rgb(0, 71, 119);
   padding: 20%;
+  padding-top: 25%;
   display: flex;
   justify-content: center;
   width: 100%;
