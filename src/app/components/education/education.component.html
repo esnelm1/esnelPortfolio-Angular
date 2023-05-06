@@ -1,32 +1,36 @@
 <div id="education" class="container-fluid-body">
     <div class="card">
       <button *ngIf="isLogged" (click)="isClickedFun()" class="bi bi-pencil-fill" style="margin-bottom: 10px;"></button>
-      <h3>Education</h3>
+      <h3>Educación</h3>
         <div *ngFor="let educaciones of educacionList">
                 <p class="card-title"><strong>{{educaciones.nombreE}}</strong> 
                     <img class="logo" src="{{educaciones.img}}"></p>
                 <p class="card-text">{{educaciones.descripcionE}}</p>
         </div>
         <div *ngIf="isClicked"  class="card-modificaciones" >
-            <h5> Modificar educacion</h5>
+            <h5>Modificar educacion</h5>
             <select #list (change)="onSelected(list.value)">
               <option default>Elegir</option>
               <option *ngFor="let educaciones of educacionList" [value]="educaciones.id">{{educaciones.nombreE}}</option>
             </select>
+            <h6>Nombre de la institución</h6>
             <input  [(ngModel)]="educacion.nombreE" type="text">
+            <h6>Descripción</h6>
             <input  [(ngModel)]="educacion.descripcionE" type="text">
             <div class="buttons-container">
               <input type="file" (change)="uploadImage($event)" #fileUploader>
               <button (click)="resetFileUploader()">Eliminar foto</button>
             </div>
             <div class="buttons-container" style="text-align: center;">
-              <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Send</button>
+              <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Enviar</button>
               <button class="delete" (click)="onDelete()" >Eliminar</button>
             </div>
           </div>
           <div *ngIf="isClicked" class="card-modificaciones">
-            <h5> Crear educacion</h5>
+            <h5>Crear educacion</h5>
+            <h6>Nombre de la institución</h6>
             <input  [(ngModel)]="newEducacion.nombreE"  type="text">
+            <h6>Descripción</h6>
             <input  [(ngModel)]="newEducacion.descripcionE" type="text">
             <button [disabled]="!localIsUpload" (click)="createData()" >Crear</button>
             <div class="buttons-container">
