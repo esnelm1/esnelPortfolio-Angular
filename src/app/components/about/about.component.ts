@@ -16,6 +16,8 @@ export class AboutComponent implements OnInit {
   persona: per = new per("","","","");
   isLogged = false;
   isClicked = false;
+  interval: any;
+  localIsUpload = true;
   constructor(public personaService: PersonaService, private userService: UserService, public imageService: ImageService) { }
 
   ngOnInit(): void {
@@ -42,9 +44,18 @@ export class AboutComponent implements OnInit {
   }
 
   uploadImage($event:any){
+    this.localIsUpload = false;
     const id = this.persona.id;
     const name = "perfil_" + id;
     this.imageService.uploadImage($event, name);
+
+    this.interval = setInterval(() => {
+      this.localIsUpload = this.imageService.isUpload;
+      if (this.localIsUpload) {
+        clearInterval(this.interval);
+        console.log('Subido correctamente')
+      }
+    },1000)
   }
 
   isClickedFun(){
