@@ -24,7 +24,10 @@
             <input  [(ngModel)]="hyS.porcentaje" type="text">
             <div class="buttons-container" style="text-align: center;">
             <button class="send" (click)="saveData()" >Enviar</button>
-            <button class="delete" (click)="onDelete()" >Eliminar</button>
+            <button class="send" (click)="onDelete()" >Eliminar</button>
+            <div *ngIf="isErrorModificar" class="alert alert-danger" role="alert" style="margin: 10px;">
+              Ha ocurrido un error. No se pudo actualizar.
+          </div>
           </div>
           </div>
           <div *ngIf="isClicked" class="card-modificaciones">
@@ -33,7 +36,10 @@
             <input  [(ngModel)]="newHyS.nombre"  type="text">
             <h6>Porcentaje de la habilidad</h6>
             <input  [(ngModel)]="newHyS.porcentaje" type="text">
-            <button class="send" (click)="createData()" >Crear</button>
+            <div style="text-align: center;"> <button class="send" (click)="createData()" >Crear</button> </div>
+            <div *ngIf="isError" class="alert alert-danger" role="alert" style="margin: 10px;">
+              Ha ocurrido un error. No se pudo subir.
+          </div>
           </div>
     </div>
 </div>

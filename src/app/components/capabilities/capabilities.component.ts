@@ -12,11 +12,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CapabilitiesComponent {
   hySList: any;
-  hyS: HyS = new HyS("",0);
-  newHyS: HyS = new HyS("",0);
+  hyS: HyS = new HyS("", 0);
+  newHyS: HyS = new HyS("", 0);
   isLogged = false;
   selectedHyS: any;
   isClicked = false;
+  isError = false;
+  isErrorModificar = false;
   public selectedClassification = 'Read';
   constructor(public hysService: HysService, private userService: UserService) { }
 
@@ -31,21 +33,27 @@ export class CapabilitiesComponent {
       }
     });
 
-    this.hysService.getHySList().subscribe(data => {this.hySList = data})
-    
+    this.hysService.getHySList().subscribe(data => { this.hySList = data })
+
   }
 
-	onSelected(value:any): void {
-		this.selectedHyS = value;
-    this.hysService.getHyS(value).subscribe(data => {this.hyS = data})
+  onSelected(value: any): void {
+    this.selectedHyS = value;
+    this.hysService.getHyS(value).subscribe(data => { this.hyS = data })
 
 
-	}
+  }
 
   saveData() {
-    this.hysService.setHyS(this.selectedHyS,this.hyS).subscribe(
-      data => {console.log('Data updated successfully')},
-      error => console.log(error)
+    this.hysService.setHyS(this.selectedHyS, this.hyS).subscribe(
+      data => {
+        console.log('Data updated successfully')
+        this.hysService.getHySList().subscribe(data => { this.hySList = data })
+        this.isErrorModificar = false;
+      },
+      error => {console.log(error)
+        this.isErrorModificar = true;
+      }
     );
 
 
@@ -53,23 +61,34 @@ export class CapabilitiesComponent {
 
   createData() {
     this.hysService.createHyS(this.newHyS).subscribe(
-      data => {console.log('Data updated successfully')},
-      error => console.log(error)
+      data => {
+        console.log('Data updated successfully')
+        this.hysService.getHySList().subscribe(data => { this.hySList = data })
+        this.isError = false;
+      },
+      error => {console.log(error)
+      this.isError = true;
+      }
     );
 
 
   }
 
-  onDelete(){
+  onDelete() {
     this.hysService.deleteHyS(this.selectedHyS).subscribe(
-      data => {console.log('Data updated successfully')},
-      error => console.log(error)
+      data => {
+        console.log('Data updated successfully')
+        this.hysService.getHySList().subscribe(data => { this.hySList = data })
+        this.isErrorModificar = false;
+      },
+      error => {console.log(error)
+      this.isErrorModificar = true;}
     );
 
 
   }
 
-  isClickedFun(){
+  isClickedFun() {
     this.isClicked = !this.isClicked;
   }
 

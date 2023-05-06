@@ -13,6 +13,7 @@ export class IntroComponent {
   persona: per = new per("","","","");
   isLogged = false;
   isClicked = false;
+  isErrorModificar = false;
   constructor(public personaService: PersonaService, private userService: UserService) {}
 
   ngOnInit(): void{
@@ -30,8 +31,10 @@ export class IntroComponent {
 
   saveData() {
     this.personaService.setPersona(1,this.persona).subscribe(
-      data => {console.log('Data updated successfully')},
-      error => console.log(error)
+      data => {console.log('Data updated successfully')
+    this.isErrorModificar = false;},
+      error => {console.log(error)
+      this.isErrorModificar = true;}
     );
   }
 

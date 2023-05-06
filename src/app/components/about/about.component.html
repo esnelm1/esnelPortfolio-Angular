@@ -12,5 +12,8 @@
       <button (click)="resetFileUploader()">Eliminar foto</button>
     </div>
     <button [disabled]="!localIsUpload" class="send" (click)="saveData()" *ngIf="isLogged">Enviar</button>
+    <div *ngIf="isErrorModificar" class="alert alert-danger" role="alert" style="margin: 10px;">
+      Ha ocurrido un error. No se pudo actualizar.
+  </div>
   </div>
 </div>

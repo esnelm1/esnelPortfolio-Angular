@@ -22,6 +22,8 @@ export class ExperiencesComponent {
   isClicked = false;
   interval:any;
   localIsUpload = true;
+  isErrorModificar = false;
+  isError = false;
   public selectedClassification = 'Read';
   constructor(public experienceService: ExperienceService, private userService: UserService, public imageService: ImageService) { }
 
@@ -30,6 +32,17 @@ export class ExperiencesComponent {
 
   resetFileUploader(): void { 
     this.fileUploader.nativeElement.value = null;
+    this.imageService.cleanIsUpload();
+
+  }
+
+  @ViewChild('fileUploader2')
+  fileUploader2!: ElementRef;
+
+  resetFileUploader2(): void { 
+    this.fileUploader2.nativeElement.value = null;
+    this.imageService.cleanIsUpload();
+
   }
 
 
@@ -62,8 +75,12 @@ export class ExperiencesComponent {
     }
     this.experienceService.setExperience(this.selectedExperience,this.experience).subscribe(
       data => {console.log('Data updated successfully')
-      this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})},
-      error => console.log(error)
+      this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
+      this.imageService.cleanIsUpload();
+      this.isErrorModificar = false;
+    },
+      error => {console.log(error)
+      this.isErrorModificar = true;}
     );
   }
 
@@ -72,15 +89,22 @@ export class ExperiencesComponent {
     this.experienceService.createExperience(this.newExperience).subscribe(
       data => {console.log('Data updated successfully')
       this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
+      this.imageService.cleanIsUpload();
+      this.isError = false;
     },
-      error => console.log(error)
+      error => {console.log(error)
+        this.isError = true}
     );
 
     }
     onDelete() {
       this.experienceService.deleteExperience(this.selectedExperience).subscribe(
-        data => {console.log('Data updated successfully')},
-        error => console.log(error)
+        data => {console.log('Data updated successfully')
+        this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
+        this.isErrorModificar = false;
+      },
+        error => {console.log(error)
+        this.isErrorModificar = true;}
       );
   }
 

@@ -19,6 +19,7 @@ export class AboutComponent implements OnInit {
   isClicked = false;
   interval: any;
   localIsUpload = true;
+  isErrorModificar = false;
   constructor(public personaService: PersonaService, 
               private userService: UserService, 
               public imageService: ImageService) { }
@@ -52,8 +53,12 @@ export class AboutComponent implements OnInit {
       this.persona.img = this.imageService.url;
     }
     this.personaService.setPersona(1,this.persona).subscribe(
-      data => {console.log('Data updated successfully')},
-      error => console.log(error)
+      data => {console.log('Data updated successfully')
+      this.imageService.cleanIsUpload();
+      this.isErrorModificar = false;
+    },
+      error => {console.log(error)
+      this.isErrorModificar = true;}
     );
   }
 

@@ -21,4 +21,8 @@ export class ImageService {
       })
       .catch(error => console.log(error))
   }
+
+  public cleanIsUpload(){
+    this.isUpload = false;
+  }
 }

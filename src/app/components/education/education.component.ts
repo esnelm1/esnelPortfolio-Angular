@@ -21,6 +21,8 @@ export class EducationComponent {
   isClicked = false;
   localIsUpload = true;
   interval:any;
+  isError = false;
+  isErrorModificar = false;
   public selectedClassification = 'Read';
   constructor(public educacionService: EducacionService, private userService: UserService, public imageService: ImageService) { }
 
@@ -29,6 +31,16 @@ export class EducationComponent {
 
   resetFileUploader(): void { 
     this.fileUploader.nativeElement.value = null;
+    this.imageService.cleanIsUpload();
+
+  }
+
+  @ViewChild('fileUploader2')
+  fileUploader2!: ElementRef;
+
+  resetFileUploader2(): void { 
+    this.fileUploader2.nativeElement.value = null;
+    this.imageService.cleanIsUpload();
   }
   
   ngOnInit(): void {
@@ -60,8 +72,11 @@ export class EducationComponent {
     this.educacionService.setEducacion(this.selectedEducacion,this.educacion).subscribe(
       data => {console.log('Data updated successfully')
       this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
+      this.imageService.cleanIsUpload();
+      this.isErrorModificar = false;
     },
-      error => console.log(error)
+      error => {console.log(error)
+        this.isErrorModificar = true;}
     );
 
   }
@@ -72,15 +87,22 @@ export class EducationComponent {
     this.educacionService.createEducacion(this.newEducacion).subscribe(
       data => {console.log('Data updated successfully')
       this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
+      this.imageService.cleanIsUpload();
+      this.isError = false;
     },
-      error => console.log(error)
+      error => {console.log(error)
+      this.isError = true;}
     );
 
     }
     onDelete() {
       this.educacionService.deleteEducacion(this.selectedEducacion).subscribe(
-        data => {console.log('Data updated successfully')},
-        error => console.log(error)
+        data => {console.log('Data updated successfully')
+        this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
+        this.isErrorModificar = false;
+      },
+        error => {console.log(error)
+          this.isErrorModificar=true;}
       );
 
   }

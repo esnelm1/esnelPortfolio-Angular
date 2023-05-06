@@ -25,11 +25,14 @@
       <input [(ngModel)]="experience.descripcionE" type="text">
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader>
-        <button (click)="resetFileUploader()">Eliminar foto</button>
+        <button class="send" (click)="resetFileUploader()">Eliminar foto</button>
       </div>
       <div class="buttons-container" style="text-align: center;">
-        <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Enviar</button>
-        <button class="delete" (click)="onDelete()" >Eliminar</button>
+        <button class="send" [disabled]="!localIsUpload" class="send" (click)="saveData()" >Enviar</button>
+        <button class="send" (click)="onDelete()" >Eliminar</button>
+        <div *ngIf="isErrorModificar" class="alert alert-danger" role="alert" style="margin: 10px;">
+          Ha ocurrido un error. No se pudo actualizar.
+      </div>
       </div>
     </div>
     <div *ngIf="isClicked" class="card-modificaciones">
@@ -39,10 +42,13 @@
       <h6>Descripción de la experiencia</h6>
       <input [(ngModel)]="newExperience.descripcionE" type="text">
       <div class="buttons-container">
-        <input type="file" (change)="uploadImage($event)" #fileUploader>
-        <button (click)="resetFileUploader()">Eliminar foto</button>
+        <input type="file" (change)="uploadImage($event)" #fileUploader2>
+        <button class="send" (click)="resetFileUploader2()">Eliminar foto</button>
       </div>
-      <button [disabled]="!localIsUpload" class="send" (click)="createData()">Crear</button>
+      <div style="text-align: center;"><button class="send" [disabled]="!localIsUpload" class="send" (click)="createData()">Crear</button></div>
+      <div *ngIf="isError" class="alert alert-danger" role="alert" style="margin: 10px;">
+        Ha ocurrido un error. No se pudo subir.
+    </div>
     </div>
   </div>
 </div>
