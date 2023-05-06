@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div *ngIf="isClicked" class="card" style="padding: 20px;">
+    <div *ngIf="isClicked" class="card-modificaciones">
       <h5> Modificar experiencia </h5>
       <select #list (change)="onSelected(list.value)">
         <option default>Elegir</option>
@@ -30,7 +30,7 @@
         <button class="delete" (click)="onDelete()" >Eliminar</button>
       </div>
     </div>
-    <div *ngIf="isClicked" class="card" style="padding: 20px;">
+    <div *ngIf="isClicked" class="card-modificaciones">
       <h5> Crear experiencia </h5>
       <input [(ngModel)]="newExperience.nombreE" type="text">
       <input [(ngModel)]="newExperience.descripcionE" type="text">

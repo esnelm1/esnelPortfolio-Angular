@@ -3,8 +3,7 @@
     <button *ngIf="isLogged" (click)="isClickedFun()" class="bi bi-pencil-fill"></button>
     <h3>About me...</h3>
     <p class="profile-text"><img class="profile-photo" src="{{persona.img}}">{{persona.descripcion}}</p>
-  </div>
-  <div *ngIf="isClicked" class="card">
+  <div *ngIf="isClicked" class="card-modificaciones">
     <h6>Descripción</h6>
     <input id="aboutMe" name="aboutMe" [(ngModel)]="persona.descripcion" type="text">
     <h6>Imagen de perfil</h6>

@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+
   ngOnInit(): void {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.isLogged = true;
+        this.dialog.closeAll();
       } else {
       }
     });
