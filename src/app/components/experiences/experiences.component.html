@@ -23,7 +23,7 @@
       <input [(ngModel)]="experience.descripcionE" type="text">
       <input type="file" (change)="uploadImage($event)">
       <div class="buttons-container" style="text-align: center;">
-        <button class="send" (click)="saveData()" >Send</button>
+        <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Send</button>
         <button class="delete" (click)="onDelete()" >Eliminar</button>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <input [(ngModel)]="newExperience.nombreE" type="text">
       <input [(ngModel)]="newExperience.descripcionE" type="text">
       <input type="file" (change)="uploadImage($event)">
-      <button class="send" (click)="createData()">Crear</button>
+      <button [disabled]="!localIsUpload" class="send" (click)="createData()">Crear</button>
     </div>
   </div>
 </div>

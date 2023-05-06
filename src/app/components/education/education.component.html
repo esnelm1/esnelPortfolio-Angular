@@ -17,7 +17,7 @@
             <input  [(ngModel)]="educacion.descripcionE" type="text">
             <input type="file" (change)="uploadImage($event)">
             <div class="buttons-container" style="text-align: center;">
-              <button class="send" (click)="saveData()" >Send</button>
+              <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Send</button>
               <button class="delete" (click)="onDelete()" >Eliminar</button>
             </div>
           </div>
@@ -25,7 +25,7 @@
             <h5> Crear educacion</h5>
             <input  [(ngModel)]="newEducacion.nombreE"  type="text">
             <input  [(ngModel)]="newEducacion.descripcionE" type="text">
-            <button (click)="createData()" >Crear</button>
+            <button [disabled]="!localIsUpload" (click)="createData()" >Crear</button>
             <input type="file" (change)="uploadImage($event)">
           </div>
         

@@ -18,6 +18,8 @@ export class EducationComponent {
   isLogged = false;
   selectedEducacion: any;
   isClicked = false;
+  localIsUpload = true;
+  interval:any;
   public selectedClassification = 'Read';
   constructor(public educacionService: EducacionService, private userService: UserService, public imageService: ImageService) { }
 
@@ -42,9 +44,15 @@ export class EducationComponent {
 	}
 
   saveData() {
-    this.educacion.img = this.imageService.url;
+    let checker: string = this.imageService.url;
+    if(checker == ''){
+    } else {
+      this.educacion.img = this.imageService.url;
+    }
     this.educacionService.setEducacion(this.selectedEducacion,this.educacion).subscribe(
-      data => {console.log('Data updated successfully')},
+      data => {console.log('Data updated successfully')
+      this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
+    },
       error => console.log(error)
     );
 
@@ -54,7 +62,9 @@ export class EducationComponent {
     this.newEducacion.img = this.imageService.url;
     console.log(this.newEducacion)
     this.educacionService.createEducacion(this.newEducacion).subscribe(
-      data => {console.log('Data updated successfully')},
+      data => {console.log('Data updated successfully')
+      this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
+    },
       error => console.log(error)
     );
 
@@ -68,9 +78,17 @@ export class EducationComponent {
   }
 
   uploadImage($event:any){
+    this.localIsUpload = false;
     const id = this.educacion.id;
     const name = "educacion_" + id;
     this.imageService.uploadImage($event, name);
+    this.interval = setInterval(() => {
+      this.localIsUpload = this.imageService.isUpload;
+      if (this.localIsUpload) {
+        clearInterval(this.interval);
+        console.log('Subido correctamente')
+      }
+    },1000)
   }
 
   isClickedFun(){

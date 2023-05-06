@@ -18,6 +18,8 @@ export class ExperiencesComponent {
   isLogged = false;
   selectedExperience: any;
   isClicked = false;
+  interval:any;
+  localIsUpload = true;
   public selectedClassification = 'Read';
   constructor(public experienceService: ExperienceService, private userService: UserService, public imageService: ImageService) { }
 
@@ -43,11 +45,14 @@ export class ExperiencesComponent {
 	}
 
   saveData() {
-    console.log(this.imageService.url);
-    
-    this.experience.img = this.imageService.url;
+    let checker: string = this.imageService.url;
+    if(checker == ''){
+    } else {
+      this.experience.img = this.imageService.url;
+    }
     this.experienceService.setExperience(this.selectedExperience,this.experience).subscribe(
-      data => {console.log('Data updated successfully')},
+      data => {console.log('Data updated successfully')
+      this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})},
       error => console.log(error)
     );
   }
@@ -55,7 +60,9 @@ export class ExperiencesComponent {
   createData() {
     this.newExperience.img = this.imageService.url;
     this.experienceService.createExperience(this.newExperience).subscribe(
-      data => {console.log('Data updated successfully')},
+      data => {console.log('Data updated successfully')
+      this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
+    },
       error => console.log(error)
     );
 
@@ -68,9 +75,18 @@ export class ExperiencesComponent {
   }
 
   uploadImage($event:any){
+    this.localIsUpload = false;
     const id = this.experience.id;
     const name = "experience_" + id;
     this.imageService.uploadImage($event, name);
+
+    this.interval = setInterval(() => {
+      this.localIsUpload = this.imageService.isUpload;
+      if (this.localIsUpload) {
+        clearInterval(this.interval);
+        console.log('Subido correctamente')
+      }
+    },1000)
   }
 
   isClickedFun(){

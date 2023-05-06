@@ -36,7 +36,11 @@ export class AboutComponent implements OnInit {
   }
 
   saveData() {
-    this.persona.img = this.imageService.url;
+    let checker: string = this.imageService.url;
+    if(checker == ''){
+    } else {
+      this.persona.img = this.imageService.url;
+    }
     this.personaService.setPersona(1,this.persona).subscribe(
       data => {console.log('Data updated successfully')},
       error => console.log(error)
