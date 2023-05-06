@@ -1,5 +1,8 @@
 .navbar{
-    margin-top: 40px;
+    position: fixed; /* Make it stick/fixed */
+    top: 20px; /* Stay on top */
+    width: 100%; /* Full width */
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 .navbar-nav {
@@ -9,7 +12,7 @@
 }
 
 .nav-item{
-    font-size: 28px;
+    font-size: 18px;
     margin: auto;
 
 }
