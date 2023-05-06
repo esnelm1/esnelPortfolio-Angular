@@ -20,11 +20,11 @@
       <input [(ngModel)]="educacion.descripcionE" type="text">
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader>
-        <button class="send" (click)="resetFileUploader()">Eliminar foto</button>
+        <button  (click)="resetFileUploader()">Eliminar foto</button>
       </div>
       <div class="buttons-container" style="text-align: center;">
         <button [disabled]="!localIsUpload" class="send" (click)="saveData()">Enviar</button>
-        <button class="delete" (click)="onDelete()">Eliminar</button>
+        <button class="send" (click)="onDelete()">Eliminar</button>
       </div>
       <div *ngIf="isErrorModificar" class="alert alert-danger" role="alert" style="margin: 10px;">
         Ha ocurrido un error. No se pudo actualizar.
@@ -38,7 +38,7 @@
       <input [(ngModel)]="newEducacion.descripcionE" type="text">
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader2>
-        <button class="send" (click)="resetFileUploader2">Eliminar foto</button>
+        <button (click)="resetFileUploader2">Eliminar foto</button>
       </div>
       <div style="text-align: center;">
         <button class="send" [disabled]="!localIsUpload" (click)="createData()">Crear</button>

@@ -25,7 +25,7 @@
       <input [(ngModel)]="experience.descripcionE" type="text">
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader>
-        <button class="send" (click)="resetFileUploader()">Eliminar foto</button>
+        <button (click)="resetFileUploader()">Eliminar foto</button>
       </div>
       <div class="buttons-container" style="text-align: center;">
         <button class="send" [disabled]="!localIsUpload" class="send" (click)="saveData()" >Enviar</button>
@@ -43,7 +43,7 @@
       <input [(ngModel)]="newExperience.descripcionE" type="text">
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader2>
-        <button class="send" (click)="resetFileUploader2()">Eliminar foto</button>
+        <button (click)="resetFileUploader2()">Eliminar foto</button>
       </div>
       <div style="text-align: center;"><button class="send" [disabled]="!localIsUpload" class="send" (click)="createData()">Crear</button></div>
       <div *ngIf="isError" class="alert alert-danger" role="alert" style="margin: 10px;">

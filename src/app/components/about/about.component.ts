@@ -29,6 +29,7 @@ export class AboutComponent implements OnInit {
 
   resetFileUploader(): void { 
     this.fileUploader.nativeElement.value = null;
+    this.imageService.cleanIsUpload();
   }
 
   ngOnInit(): void {
