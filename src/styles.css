@@ -17,3 +17,23 @@ h3{
     background-color: rgb(230, 230, 228);
 }
 
+.send {
+    margin-inline: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: auto;
+    align-self: center;
+  }
+  .delete{
+    margin-inline: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    width: auto;
+    align-self: center;
+  }
+
+  .bi.bi-pencil-fill{
+    width: auto;
+    align-self: end;
+    border-radius: 3px;
+}

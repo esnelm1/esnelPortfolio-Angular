@@ -1,6 +1,8 @@
 .card{
     border-radius: 30px;
     padding: 20px;
+    margin-top: 10px;
+    border-radius: 30px;
 }
 
 .container-fluid-body{
@@ -20,7 +22,3 @@
     font-size: 20px;
 }
 
-.card{
-    border-radius: 30px;
-    padding: 20px;
-}

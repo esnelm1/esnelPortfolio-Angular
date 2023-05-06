@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class IntroComponent {
   persona: per = new per("","","","");
   isLogged = false;
+  isClicked = false;
   constructor(public personaService: PersonaService, private userService: UserService) {}
 
   ngOnInit(): void{
@@ -33,7 +34,9 @@ export class IntroComponent {
       error => console.log(error)
     );
   }
-  onFileChanged() {
+
+  isClickedFun(){
+    this.isClicked = !this.isClicked;
   }
 
 

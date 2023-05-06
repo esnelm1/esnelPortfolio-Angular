@@ -15,6 +15,7 @@ import { ImageService } from 'src/app/services/image.service';
 export class AboutComponent implements OnInit {
   persona: per = new per("","","","");
   isLogged = false;
+  isClicked = false;
   constructor(public personaService: PersonaService, private userService: UserService, public imageService: ImageService) { }
 
   ngOnInit(): void {
@@ -46,5 +47,7 @@ export class AboutComponent implements OnInit {
     this.imageService.uploadImage($event, name);
   }
 
-
+  isClickedFun(){
+    this.isClicked = !this.isClicked;
+  }
 }

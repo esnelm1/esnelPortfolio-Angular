@@ -1,11 +1,13 @@
 <div id="education" class="container-fluid-body">
     <div class="card">
+      <button *ngIf="isLogged" (click)="isClickedFun()" class="bi bi-pencil-fill" style="margin-bottom: 10px;"></button>
+      <h3>Education</h3>
         <div *ngFor="let educaciones of educacionList">
                 <p class="card-title"><strong>{{educaciones.nombreE}}</strong> 
                     <img class="logo" src="{{educaciones.img}}"></p>
                 <p class="card-text">{{educaciones.descripcionE}}</p>
         </div>
-        <div *ngIf="isLogged" class="card" style="padding: 20px;">
+        <div *ngIf="isClicked"  class="card" style="padding: 20px;">
             <h5> Modificar educacion</h5>
             <select #list (change)="onSelected(list.value)">
               <option default>Elegir</option>
@@ -14,10 +16,12 @@
             <input  [(ngModel)]="educacion.nombreE" type="text">
             <input  [(ngModel)]="educacion.descripcionE" type="text">
             <input type="file" (change)="uploadImage($event)">
-            <button (click)="saveData()" >Send</button>
-            <button (click)="onDelete()" >Eliminar</button>
+            <div class="buttons-container" style="text-align: center;">
+              <button class="send" (click)="saveData()" >Send</button>
+              <button class="delete" (click)="onDelete()" >Eliminar</button>
+            </div>
           </div>
-          <div *ngIf="isLogged" class="card" style="padding: 20px;">
+          <div *ngIf="isClicked" class="card" style="padding: 20px;">
             <h5> Crear educacion</h5>
             <input  [(ngModel)]="newEducacion.nombreE"  type="text">
             <input  [(ngModel)]="newEducacion.descripcionE" type="text">

@@ -17,6 +17,7 @@ export class ExperiencesComponent {
   newExperience: exp = new exp("","","");
   isLogged = false;
   selectedExperience: any;
+  isClicked = false;
   public selectedClassification = 'Read';
   constructor(public experienceService: ExperienceService, private userService: UserService, public imageService: ImageService) { }
 
@@ -70,5 +71,9 @@ export class ExperiencesComponent {
     const id = this.experience.id;
     const name = "experience_" + id;
     this.imageService.uploadImage($event, name);
+  }
+
+  isClickedFun(){
+    this.isClicked = !this.isClicked;
   }
 }

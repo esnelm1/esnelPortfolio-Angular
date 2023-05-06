@@ -16,6 +16,7 @@ export class CapabilitiesComponent {
   newHyS: HyS = new HyS("",0);
   isLogged = false;
   selectedHyS: any;
+  isClicked = false;
   public selectedClassification = 'Read';
   constructor(public hysService: HysService, private userService: UserService) { }
 
@@ -66,6 +67,10 @@ export class CapabilitiesComponent {
     );
 
 
+  }
+
+  isClickedFun(){
+    this.isClicked = !this.isClicked;
   }
 
 }

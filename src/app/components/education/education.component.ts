@@ -17,6 +17,7 @@ export class EducationComponent {
   newEducacion: Educacion = new Educacion("","","");
   isLogged = false;
   selectedEducacion: any;
+  isClicked = false;
   public selectedClassification = 'Read';
   constructor(public educacionService: EducacionService, private userService: UserService, public imageService: ImageService) { }
 
@@ -72,4 +73,7 @@ export class EducationComponent {
     this.imageService.uploadImage($event, name);
   }
 
+  isClickedFun(){
+    this.isClicked = !this.isClicked;
+  }
 }
