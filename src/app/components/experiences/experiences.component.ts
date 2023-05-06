@@ -5,6 +5,8 @@ import { ExperienceService } from 'src/app/services/experience.service';
 import { ImageService } from 'src/app/services/image.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
+import {  ViewChild,ElementRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-experiences',
@@ -22,6 +24,14 @@ export class ExperiencesComponent {
   localIsUpload = true;
   public selectedClassification = 'Read';
   constructor(public experienceService: ExperienceService, private userService: UserService, public imageService: ImageService) { }
+
+  @ViewChild('fileUploader')
+  fileUploader!: ElementRef;
+
+  resetFileUploader(): void { 
+    this.fileUploader.nativeElement.value = null;
+  }
+
 
   ngOnInit(): void {
     const auth = getAuth();

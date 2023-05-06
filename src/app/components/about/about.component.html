@@ -8,7 +8,10 @@
     <h6>Descripción</h6>
     <input id="aboutMe" name="aboutMe" [(ngModel)]="persona.descripcion" type="text">
     <h6>Imagen de perfil</h6>
-    <input type="file" (change)="uploadImage($event)" value="{{persona.img}}">
+    <div class="buttons-container">
+      <input type="file" (change)="uploadImage($event)" #fileUploader>
+      <button (click)="resetFileUploader()">Eliminar foto</button>
+    </div>
     <button [disabled]="!localIsUpload" class="send" (click)="saveData()" *ngIf="isLogged">Send</button>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { EducacionService } from 'src/app/services/educacion.service';
 import { ImageService } from 'src/app/services/image.service';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UserService } from 'src/app/services/user.service';
+import {  ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-education',
@@ -23,6 +24,13 @@ export class EducationComponent {
   public selectedClassification = 'Read';
   constructor(public educacionService: EducacionService, private userService: UserService, public imageService: ImageService) { }
 
+  @ViewChild('fileUploader')
+  fileUploader!: ElementRef;
+
+  resetFileUploader(): void { 
+    this.fileUploader.nativeElement.value = null;
+  }
+  
   ngOnInit(): void {
     const auth = getAuth();
     const user = auth.currentUser;

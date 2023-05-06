@@ -21,7 +21,10 @@
       </select>
       <input [(ngModel)]="experience.nombreE" type="text">
       <input [(ngModel)]="experience.descripcionE" type="text">
-      <input type="file" (change)="uploadImage($event)">
+      <div class="buttons-container">
+        <input type="file" (change)="uploadImage($event)" #fileUploader>
+        <button (click)="resetFileUploader()">Eliminar foto</button>
+      </div>
       <div class="buttons-container" style="text-align: center;">
         <button [disabled]="!localIsUpload" class="send" (click)="saveData()" >Send</button>
         <button class="delete" (click)="onDelete()" >Eliminar</button>
@@ -31,7 +34,10 @@
       <h5> Crear experiencia </h5>
       <input [(ngModel)]="newExperience.nombreE" type="text">
       <input [(ngModel)]="newExperience.descripcionE" type="text">
-      <input type="file" (change)="uploadImage($event)">
+      <div class="buttons-container">
+        <input type="file" (change)="uploadImage($event)" #fileUploader>
+        <button (click)="resetFileUploader()">Eliminar foto</button>
+      </div>
       <button [disabled]="!localIsUpload" class="send" (click)="createData()">Crear</button>
     </div>
   </div>

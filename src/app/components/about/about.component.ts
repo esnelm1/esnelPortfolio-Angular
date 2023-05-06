@@ -6,6 +6,7 @@ import { OnInit } from '@angular/core';
 import { per } from 'src/app/models/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
 import { ImageService } from 'src/app/services/image.service';
+import {  ViewChild,ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -18,7 +19,16 @@ export class AboutComponent implements OnInit {
   isClicked = false;
   interval: any;
   localIsUpload = true;
-  constructor(public personaService: PersonaService, private userService: UserService, public imageService: ImageService) { }
+  constructor(public personaService: PersonaService, 
+              private userService: UserService, 
+              public imageService: ImageService) { }
+
+  @ViewChild('fileUploader')
+  fileUploader!: ElementRef;
+
+  resetFileUploader(): void { 
+    this.fileUploader.nativeElement.value = null;
+  }
 
   ngOnInit(): void {
     const auth = getAuth();

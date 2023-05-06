@@ -8,4 +8,7 @@
         <input type="password" class="form-control" formControlName="password">
     </div>
     <input type="submit" value="Enviar">
+    <div *ngIf="isError" class="alert alert-danger" role="alert" style="margin: 10px;">
+        Ha ocurrido un error. Verifique sus datos.
+    </div>
 </form>

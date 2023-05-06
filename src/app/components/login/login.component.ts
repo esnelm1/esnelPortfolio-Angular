@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
 export class LoginDialogComponent implements OnInit {
   formLogin: FormGroup;
   isLogged = false;
+  isError = false;
 
   constructor(
     private userService: UserService,
@@ -83,7 +84,8 @@ export class LoginDialogComponent implements OnInit {
       .then(response => {
         console.log(response);
       })
-      .catch(error => console.log(error));
+      .catch(error => {console.log(error)
+      this.isError = true;});
   }
 
 
