@@ -9,6 +9,25 @@
 table {
     width:100%;
     Table-Layout:fixed;
+    align-self: center;
+}
+
+th{
+    width: 250px;
+    height: 250px;
 }
 
   
+.container-fluid-body{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+th{
+    align-self: center !important;
+    text-align: center !important;
+}

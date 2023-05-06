@@ -4,9 +4,9 @@
   </div>
 </div>
 <div class="container-fluid-body">
-<div class="card">
-  <input *ngIf="isLogged" [(ngModel)]="persona.nombre" type="text">
-  <input *ngIf="isLogged" [(ngModel)]="persona.apellido" type="text">
+<div *ngIf="isLogged" class="card">
+  <input  [(ngModel)]="persona.nombre" type="text">
+  <input  [(ngModel)]="persona.apellido" type="text">
   <button (click)="saveData()" *ngIf="isLogged">Send</button>
 </div>
 </div>

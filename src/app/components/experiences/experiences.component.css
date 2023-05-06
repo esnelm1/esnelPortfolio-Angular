@@ -16,4 +16,10 @@
     padding-left: 15px;
     padding-right: 15px;
     margin: 0;
+    overflow-x: auto;
+}
+
+.container-fluid-body{
+    padding-bottom: 5px;
+    padding-top: 5px ;
 }

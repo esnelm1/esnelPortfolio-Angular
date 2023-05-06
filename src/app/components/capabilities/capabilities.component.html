@@ -1,16 +1,16 @@
 <div id="capabilities" class="container-fluid-body">
     <div class="card">
         <h3> Hard and soft skills </h3>
-        <table id="table-sparkline">
-            <tbody id="tbody-sparkline">
-                <tr>
+        <div class="table-container">
+        <table>
+            <tbody>
                     <th *ngFor="let hys of hySList">
                         <app-percentage-charts count="{{hys.porcentaje}}"
                         name="{{hys.nombre}}"></app-percentage-charts>                       
                     </th>
-                </tr>
             </tbody>
         </table>
+    </div>
         <div *ngIf="isLogged" class="card" style="padding: 20px;">
             <h5> Modificar habilidad </h5>
             <select #list (change)="onSelected(list.value)">
