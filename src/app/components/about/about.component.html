@@ -5,7 +5,7 @@
     <p class="profile-text"><img class="profile-photo" src="{{persona.img}}">{{persona.descripcion}}</p>
   <div *ngIf="isClicked" class="card-modificaciones">
     <h6>Descripción</h6>
-    <input id="aboutMe" name="aboutMe" [(ngModel)]="persona.descripcion" type="text">
+    <textarea rows="7" cols="50" id="aboutMe" name="aboutMe" [(ngModel)]="persona.descripcion" type="text"></textarea>
     <h6>Imagen de perfil</h6>
     <div class="buttons-container">
       <input type="file" (change)="uploadImage($event)" #fileUploader>

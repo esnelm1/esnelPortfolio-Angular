@@ -17,7 +17,7 @@
       <h6>Nombre de la institución</h6>
       <input [(ngModel)]="educacion.nombreE" type="text">
       <h6>Descripción</h6>
-      <input [(ngModel)]="educacion.descripcionE" type="text">
+      <textarea cols="50" [(ngModel)]="educacion.descripcionE" type="text"></textarea>
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader>
         <button  (click)="resetFileUploader()">Eliminar foto</button>
@@ -35,7 +35,7 @@
       <h6>Nombre de la institución</h6>
       <input [(ngModel)]="newEducacion.nombreE" type="text">
       <h6>Descripción</h6>
-      <input [(ngModel)]="newEducacion.descripcionE" type="text">
+      <textarea cols="50" [(ngModel)]="newEducacion.descripcionE" type="text"></textarea>
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader2>
         <button (click)="resetFileUploader2">Eliminar foto</button>

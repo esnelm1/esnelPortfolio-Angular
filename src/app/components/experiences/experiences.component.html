@@ -22,7 +22,7 @@
       <h6>Nombre de la experiencia</h6>
       <input [(ngModel)]="experience.nombreE" type="text">
       <h6>Descripción de la experiencia</h6>
-      <input [(ngModel)]="experience.descripcionE" type="text">
+      <textarea rows="7" cols="50" [(ngModel)]="experience.descripcionE" type="text"></textarea>
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader>
         <button (click)="resetFileUploader()">Eliminar foto</button>
@@ -40,7 +40,7 @@
       <h6>Nombre de la experiencia</h6>
       <input [(ngModel)]="newExperience.nombreE" type="text">
       <h6>Descripción de la experiencia</h6>
-      <input [(ngModel)]="newExperience.descripcionE" type="text">
+      <textarea rows="7" cols="50" [(ngModel)]="newExperience.descripcionE" type="text"></textarea>
       <div class="buttons-container">
         <input type="file" (change)="uploadImage($event)" #fileUploader2>
         <button (click)="resetFileUploader2()">Eliminar foto</button>
