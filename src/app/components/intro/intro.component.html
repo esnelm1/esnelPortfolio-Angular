@@ -12,7 +12,7 @@
     <input id="name" [(ngModel)]="persona.nombre" type="text">
     <h6>Apellido</h6>
     <input id="apellido" [(ngModel)]="persona.apellido" type="text">
-    <button class="send" (click)="saveData()" *ngIf="isLogged">Send</button>
+    <button class="send" (click)="saveData()" *ngIf="isLogged">Enviar</button>
     <div *ngIf="isErrorModificar" class="alert alert-danger" role="alert" style="margin: 10px;">
       Ha ocurrido un error. No se pudo actualizar.
   </div>
