@@ -77,6 +77,7 @@ export class ExperiencesComponent {
       data => {console.log('Data updated successfully')
       this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
       this.imageService.cleanIsUpload();
+      this.resetFileUploader();
       this.isErrorModificar = false;
     },
       error => {console.log(error)
@@ -90,6 +91,7 @@ export class ExperiencesComponent {
       data => {console.log('Data updated successfully')
       this.experienceService.getExperienceList().subscribe(data => {this.experienceList = data})
       this.imageService.cleanIsUpload();
+      this.resetFileUploader2();
       this.isError = false;
     },
       error => {console.log(error)

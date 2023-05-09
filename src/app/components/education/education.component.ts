@@ -73,6 +73,7 @@ export class EducationComponent {
       data => {console.log('Data updated successfully')
       this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
       this.imageService.cleanIsUpload();
+      this.resetFileUploader();
       this.isErrorModificar = false;
     },
       error => {console.log(error)
@@ -88,6 +89,7 @@ export class EducationComponent {
       data => {console.log('Data updated successfully')
       this.educacionService.getEducacionList().subscribe(data => {this.educacionList = data})
       this.imageService.cleanIsUpload();
+      this.resetFileUploader2();
       this.isError = false;
     },
       error => {console.log(error)
