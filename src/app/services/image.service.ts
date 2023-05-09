@@ -23,6 +23,7 @@ export class ImageService {
   }
 
   public cleanIsUpload(){
+    this.url = '';
     this.isUpload = false;
   }
 }
